@@ -1,0 +1,26 @@
+.sidebar {
+}
+
+.sidebar.open {
+}
+
+.background {
+}
+
+.nav {
+}
+
+.nav a {
+}
+
+.nav a:hover {
+}
+
+.nav a.active {
+    background-color: #00cc22;
+}
+.close {
+}
+
+.close img {
+}
