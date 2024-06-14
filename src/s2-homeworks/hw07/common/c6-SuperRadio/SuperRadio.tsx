@@ -4,6 +4,8 @@ import React, {
     DetailedHTMLProps,
     HTMLAttributes,
     useState,
+    useEffect,
+    useLayoutEffect,
 } from 'react'
 import s from './SuperRadio.module.css'
 
@@ -36,7 +38,10 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
     ...restProps
 }) => {
 
-
+    if (onChangeOption && options) {
+        const HHH = options.find(n => n.id === value)
+        options.map(e => e === HHH ? e.checked = true : e.checked = false)
+    }
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // debugger
         if (onChangeOption && options) {
@@ -47,6 +52,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
 
 
     }
+
 
     const finalRadioClassName = s.radio + (className ? ' ' + className : '')
     const spanClassName = s.span + (spanProps?.className ? ' ' + spanProps.className : '')
@@ -60,7 +66,7 @@ const SuperRadio: React.FC<SuperRadioPropsType> = ({
                     type={'radio'}
                     name={o.value}
                     checked={o.checked}
-                    value={value}
+                    value={id}
                     // name, checked, value делают студенты
 
                     onChange={onChangeCallback}

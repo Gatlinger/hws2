@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SuperSelect from './common/c5-SuperSelect/SuperSelect'
 import SuperRadio from './common/c6-SuperRadio/SuperRadio'
 import s2 from '../../s1-main/App.module.css'
@@ -12,13 +12,16 @@ import s from './HW7.module.css'
 * */
 
 const arr = [
-    { id: 1, value: 'x', checked: true },
-    { id: 2, value: 'y', checked: false },
-    { id: 3, value: 'z', checked: false },
+    { id: 1, value: '111'},
+    { id: 2, value: '222'},
+    { id: 3, value: '333'},
 ] // value может быть изменено
+
+
 
 const HW7 = () => {
     const [value, onChangeOption] = useState<number>(1) // селект и радио должны работать синхронно
+
 
     return (
         <div id={'hw7'}>
